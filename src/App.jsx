@@ -31,7 +31,9 @@ const App = () => {
 
   return (
     <>
-
+      <Navbar />
+        
+      <Footer />
     </>
   )
 }
