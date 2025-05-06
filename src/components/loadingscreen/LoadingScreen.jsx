@@ -2,7 +2,9 @@ import React from 'react'
 
 const LoadingScreen = () => {
   return (
-    <div>LoadingScreen</div>
+    <div 
+      className='loading_screen'
+    >LoadingScreen</div>
   )
 }
 

@@ -14,13 +14,13 @@ import UserProfilePage from './pages/UserProfilePage';
 
 import "./App.css";
 
-const App = () => {
+const AppContent = () => {
   const location = useLocation()
   const [pageLoading, setPageLoading] = useState(true);
 
   useEffect(() => {
     const onHomePage = location.pathname === "/"
-    const delay = onHomePage ? 4000 : 2000
+    const delay = onHomePage ? 3000 : 500
 
     const loadingTimer = setTimeout(() => {
       setPageLoading(false)
@@ -49,5 +49,11 @@ const App = () => {
     </>
   )
 }
+
+const App = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
 
 export default App;
