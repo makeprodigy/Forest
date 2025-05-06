@@ -1,6 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+  const navigate = useNavigate()
+
+  const handleLogIn = (e) => {
+    e.preventDefault()
+
+    navigate('/');
+  }
+
   return (
     <div className="login_form_container">
       <div className='login_form_elements'>
@@ -24,6 +33,7 @@ const LoginForm = () => {
       <button
         type='submit'
         className='login_button'
+        onClick={handleLogIn}
       >Login</button>
     </div>
   )

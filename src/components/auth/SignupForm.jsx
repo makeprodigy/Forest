@@ -1,6 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const SignupForm = () => {
+  const navigate = useNavigate()
+
+  const handleSignUp = (e) => {
+    e.preventDefault()
+
+    navigate('/');
+  }
 
   return (
     <div className='signup_form_container'>
@@ -43,6 +52,7 @@ const SignupForm = () => {
       <button 
         type='submit'
         className='signup_button'
+        onClick={handleSignUp}
       >Sign Up</button>
     </div>
   )

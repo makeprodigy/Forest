@@ -34,8 +34,10 @@ const AppContent = () => {
   }
 
   return (
-    <>
-      <Navbar />
+    <div 
+     className='main_container'
+    >
+      {location.pathname !== "/auth" && <Navbar />}
       <Routes>
         <Route element={<LoginSignupPage/>} path="/auth" />
         <Route element={<HomePage/>} path="/" />
@@ -45,8 +47,8 @@ const AppContent = () => {
         <Route element={<SellerDashboardPage/>} path="/seller-dashboard" />
         <Route element={<CartCheckoutPage/>} path="/cart-checkout" />
       </Routes>
-      <Footer />
-    </>
+      {location.pathname !== "/auth" && <Footer />}
+    </div>
   )
 }
 
