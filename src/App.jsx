@@ -20,7 +20,7 @@ const AppContent = () => {
 
   useEffect(() => {
     const onHomePage = location.pathname === "/"
-    const delay = onHomePage ? 3000 : 500
+    const delay = onHomePage ? 1000 : 400
 
     const loadingTimer = setTimeout(() => {
       setPageLoading(false)

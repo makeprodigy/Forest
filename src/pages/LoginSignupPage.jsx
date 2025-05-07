@@ -9,6 +9,9 @@ const LoginSignupPage = () => {
 
   return (
     <div 
+      className='login_signup_page'
+    >
+    <div 
       className='login_signup_page_main_container'  
     >
       <h1>
@@ -20,11 +23,12 @@ const LoginSignupPage = () => {
       <p>
         {isLoggedIn ? "Don't have an account? " : "Already have an account? "}
         <button 
-          className=''
+          className='switch_button'
           onClick={() => setIsLoggedIn(!isLoggedIn)}>
           {isLoggedIn ? "Sign Up" : "Log In"}
         </button>
       </p>
+    </div>
     </div>
   )
 }
