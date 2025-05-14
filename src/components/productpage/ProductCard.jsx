@@ -1,9 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  const { name, price, image, rating } = product;
+
   return (
-    <div>ProductCard</div>
-  )
-}
+    <div className="products-page-card">
+      <img src={image} alt={name} className="products-page-card-img" />
+      <h4 className="products-page-card-title">{name}</h4>
+      <div className="products-page-card-rating">
+        <span className="products-page-card-star">⭐</span>
+        <span className="products-page-card-rating-value">{rating.rate.toFixed(1)}</span>
+        <span className="products-page-card-reviews">({rating.count})</span>
+      </div>
+      <p className="products-page-card-price">${price}</p>
+      <button className="products-page-card-button">Add to Cart</button>
+    </div>
+  );
+};
 
-export default ProductCard
+export default ProductCard;

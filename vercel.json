@@ -2,6 +2,7 @@
   "redirects": [
     {
       "source": "/",
+      "has": [{ "type": "cookie", "key": "loggedIn", "value": "false" }],
       "destination": "/auth",
       "permanent": false
     }

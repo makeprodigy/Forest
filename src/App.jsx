@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate} from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import LoadingScreen from './components/loadingscreen/LoadingScreen';
@@ -17,7 +17,9 @@ import "./App.css";
 const AppContent = () => {
   const location = useLocation()
   const [pageLoading, setPageLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  });
 
   useEffect(() => {
     const onHomePage = location.pathname === "/"
@@ -32,6 +34,10 @@ const AppContent = () => {
 
   if (pageLoading) {
     return <LoadingScreen />
+  }
+
+  if (!isLoggedIn && location.pathname === "/") {
+    return <Navigate to="/auth" replace />;
   }
 
   return (

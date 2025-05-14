@@ -6,10 +6,11 @@ const SignupForm = ({ setIsLoggedIn }) => {
   const navigate = useNavigate()
 
   const handleSignUp = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true'); // Persist login state in localStorage
     navigate('/');
-  }
+  };
 
   return (
     <div className='signup_form_container'>

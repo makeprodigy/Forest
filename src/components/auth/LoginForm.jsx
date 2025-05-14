@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom'
 const LoginForm = ({setIsLoggedIn}) => {
   const navigate = useNavigate()
 
-  const handleLogIn = (e) => {
-    e.preventDefault()
+  const handleLogin = (e) => {
+    e.preventDefault();
     setIsLoggedIn(true);
-    navigate('/');
-  }
+    localStorage.setItem('isLoggedIn', 'true'); // Persist login state in localStorage
+    navigate('/'); // Redirect to the home page after login
+  };
 
   return (
     <div className="login_form_container">
@@ -33,7 +34,7 @@ const LoginForm = ({setIsLoggedIn}) => {
       <button
         type='submit'
         className='login_button'
-        onClick={handleLogIn}
+        onClick={handleLogin}
       >Login</button>
     </div>
   )

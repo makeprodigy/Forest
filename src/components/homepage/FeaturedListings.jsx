@@ -29,7 +29,7 @@ const FeaturedListings = () => {
             <h3>{product.title}</h3>
             <p className="product-rating">⭐ {product.rating?.rate} ({product.rating?.count})</p>
             <div className="product-bottom">
-              <span className="product-price">₹{product.price}</span>
+              <span className="product-price">${product.price}</span>
             </div>
           </div>
         ))}
