@@ -27,7 +27,7 @@ const SellerStats = () => {
         </div>
         <div className="stat-item">
           <h3>Total Revenue</h3>
-          <p>${stats.revenue.toLocaleString()}</p>
+          <p>₹{stats.revenue.toLocaleString()}</p>
         </div>
       </div>
     </div>
