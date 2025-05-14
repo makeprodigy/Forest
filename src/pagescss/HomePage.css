@@ -1,0 +1,287 @@
+html {
+  box-sizing: border-box;
+}
+* , *:before, *::after {
+  box-sizing: inherit;
+}
+
+/* <<<<<<<HERO SECTION>>>>>>>>> */
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  box-sizing: border-box;
+
+  background-image: url('../assets/market-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero_content {
+  max-width: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.hero_content h1 {
+  font-size: 3rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0)
+}
+
+.hero_content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0)
+}
+
+.hero_content button {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero_content button:hover {
+  background-color: #1b5e20;
+}
+
+/* <<<<<<<<FEATURED LISTINGS SECTION>>>>>>>> */
+.featured-listings {
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+.main-heading {
+  font-size: 3rem;
+  color: #2e7d32;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.product-grid {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 2rem 2rem;
+  gap: 1.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 100%) transparent;
+}
+
+.product-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  width: 240px;
+  max-width: 240px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: left;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  transform-origin: center;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.07);
+  z-index: 10;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.2rem 0;
+  color: #333;
+  min-height: 3rem;
+}
+
+.product-rating {
+  font-size: 1rem;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.2rem 0.2rem;
+  border-radius: 0.25rem;
+  z-index: 2;
+}
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.product-card img {
+  height: auto;
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* <<<<<<<<<<TESTIMONIALS SECTION>>>>>>>>>> */
+
+.testimonials_section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.testimonials_section h2 {
+  font-size: 3rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.testimonials_container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: visible;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem; 
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 100%) transparent;
+}
+
+.testimonials_container::-webkit-scrollbar {
+  height: 8px;
+}
+.testimonials_container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.testimonial_card {
+  flex: 0 0 auto;
+  min-width: 320px;
+  max-width: 320px;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  scroll-snap-align: x mandatory;
+  transition: transform 0.3s ease;
+}
+
+.testimonial_card:hover {
+  transform: scale(1.07);
+  z-index: 10;
+}
+
+.testimonial_card img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.testimonial_card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #333;
+}
+
+.testimonial_card .role {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.testimonial_card .feedback {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.featured-listings,
+.testimonials_section {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+/* <<<<<<<<<<MEDIA QUERIES>>>>>>>>> */
+@media (max-width: 768px) {
+  .hero_section {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+  }
+
+  .hero_content{
+    max-width: 100%;
+  }
+
+  .hero_content h1 {
+    font-size: 2.2rem;
+
+  }
+
+  .testimonials_section h2 {
+    font-size: 2rem;
+  }
+
+  .testimonials_container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .testimonial_card {
+    min-width: 260px;
+    max-width: 260px;
+    padding: 1.5rem;
+  }
+
+  .testimonial_card h3 {
+    font-size: 1rem;
+  }
+
+  .testimonial_card .role,
+  .testimonial_card .feedback {
+    font-size: 0.95rem;
+  }
+}
+

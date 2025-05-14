@@ -18,9 +18,9 @@
     white
   );
   mask: 
-    radial-gradient(farthest-side, transparent 40%, black 41%);
+    radial-gradient(farthest-side, transparent 75%, black 41%);
   -webkit-mask: 
-    radial-gradient(farthest-side, transparent 40%, black 41%);
+    radial-gradient(farthest-side, transparent 75%, black 41%);
   animation: spin 1s ease-in-out infinite;
 }
 

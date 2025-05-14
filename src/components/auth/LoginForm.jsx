@@ -1,12 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const LoginForm = () => {
+const LoginForm = ({setIsLoggedIn}) => {
   const navigate = useNavigate()
 
   const handleLogIn = (e) => {
     e.preventDefault()
-
+    setIsLoggedIn(true);
     navigate('/');
   }
 

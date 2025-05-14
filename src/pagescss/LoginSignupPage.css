@@ -23,6 +23,10 @@ html {
   text-align: center;
 }
 
+.login_signup_page_main_container h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
 .signup_form_container, .login_form_container{
   display: flex;
   flex-direction: column;
@@ -42,19 +46,24 @@ html {
   text-align: right;
 }
 .signup_form_elements input, .login_form_elements input  {
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(238, 238, 238);
   flex: 1;
   width: 75%;
   padding: 0.4rem;
   font-size: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0.3rem;
+  border: 1px solid rgb(238, 238, 238);
+}
+.signup_form_elements input::placeholder,
+.login_form_elements input::placeholder {
+  font-size: small;
+  color: #9a9999;
 }
 .signup_button, .login_button {
   background-color: rgb(64, 64, 255);
   color: white;
   font-size: 1.1rem;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   height: 2rem;
   width: 100%;
   margin: 1.3rem 0;

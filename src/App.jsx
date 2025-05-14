@@ -17,6 +17,7 @@ import "./App.css";
 const AppContent = () => {
   const location = useLocation()
   const [pageLoading, setPageLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const onHomePage = location.pathname === "/"
@@ -37,9 +38,12 @@ const AppContent = () => {
     <div 
      className='main_container'
     >
-      {location.pathname !== "/auth" && <Navbar />}
+      {location.pathname !== "/auth" && <Navbar isLoggedIn={isLoggedIn}/>}
       <Routes>
-        <Route element={<LoginSignupPage/>} path="/auth" />
+        <Route
+          path="/auth"
+          element={<LoginSignupPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+        />
         <Route element={<HomePage/>} path="/" />
         <Route element={<ProductsPage/>} path="/products" />
         <Route element={<ProductDetailsPage/>} path="/product-details" />
