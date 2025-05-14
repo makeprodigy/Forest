@@ -7,7 +7,7 @@ const Navbar = () => {
     >
       <div 
         className='navbar_title'
-      >Forest</div>
+      ><a href='/'>Forest</a></div>
       <div 
         className='navbar_buttons'
       >
