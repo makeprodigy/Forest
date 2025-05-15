@@ -16,7 +16,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: 
     linear-gradient(to bottom right, #e8f5e9, #a5d6a7),
-    url('https://www.transparenttextures.com/patterns/green-fibers.png'); /* subtle texture */
+    url('https://www.transparenttextures.com/patterns/green-fibers.png');
   background-blend-mode: overlay;
   background-repeat: repeat;
   color: #333;

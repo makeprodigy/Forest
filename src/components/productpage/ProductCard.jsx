@@ -1,12 +1,12 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => {
-  const { name, price, image, rating } = product;
+  const { title, price, image, rating } = product;
 
   return (
     <div className="products-page-card">
-      <img src={image} alt={name} className="products-page-card-img" />
-      <h4 className="products-page-card-title">{name}</h4>
+      <img src={image} alt={title} className="products-page-card-img" />
+      <h4 className="products-page-card-title">{title}</h4>
       <div className="products-page-card-rating">
         <span className="products-page-card-star">⭐</span>
         <span className="products-page-card-rating-value">{rating.rate.toFixed(1)}</span>
