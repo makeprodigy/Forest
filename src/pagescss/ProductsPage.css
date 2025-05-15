@@ -20,7 +20,7 @@
 
 .products-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr)); /* 250px -> 15.625rem */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 250px -> 15.625rem */
   gap: 1.5rem;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.4);
@@ -62,9 +62,9 @@
 }
 
 .products-page-card-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0.5rem 0 0.2rem 0;
-  color: #030303;
+  color: rgb(144, 88, 15);
   height: 4rem;
   order: 2;
   overflow: scroll;
