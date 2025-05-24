@@ -53,8 +53,7 @@ html {
   font-size: 3rem;
   background: linear-gradient(to right, #0e8111, #2e7d32); /* Applied navbar gradient */
   -webkit-background-clip: text; /* Ensures gradient applies to text */
-  background-clip: text; /* Standard property for compatibility */
-  -webkit-text-fill-color: transparent; /* Makes the text transparent to show gradient */
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   background-color: rgba(255, 255, 255, 0)
 }
@@ -214,12 +213,13 @@ html {
   flex: 0 0 auto;
   min-width: 320px;
   max-width: 320px;
-  background-color: white;
+  background: linear-gradient(to bottom right, #ffffff 30%, var(--primary-green-dark)100%); /* Updated gradient */
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   scroll-snap-align: x mandatory;
   transition: transform 0.3s ease;
+  text-align: center; /* Align content to the center */
 }
 
 .testimonial_card:hover {
@@ -232,25 +232,29 @@ html {
   width: 80px;
   border-radius: 50%;
   object-fit: cover;
+  margin: 0 auto; /* Center the image */
   margin-bottom: 1rem;
 }
 
 .testimonial_card h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.2rem;
-  color: var(--dark-gray); /* Adjusted to use variable */
+  color: var(--dark-gray); /* Retained heading color */
+  text-align: center; /* Center the name */
 }
 
 .testimonial_card .role {
   font-size: 1rem;
-  color: #777;
+  color: #777; /* Retained text color */
   margin-bottom: 1rem;
+  text-align: center; /* Center the designation */
 }
 
 .testimonial_card .feedback {
   font-size: 1rem;
-  color: var(--medium-gray); /* Adjusted to use variable */
+  color: var(--medium-gray); /* Retained text color */
   line-height: 1.5;
+  text-align: center; /* Center the feedback text */
 }
 
 .featured-listings,

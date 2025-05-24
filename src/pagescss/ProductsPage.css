@@ -36,7 +36,7 @@
   width: 15rem;
   max-width: 15rem;
   padding: 1rem;
-  background-color: #fff;
+  background: linear-gradient(to bottom, #ffffff 60%, var(--primary-green-dark) 110%); /* Updated gradient */
   border-radius: 0.5rem; 
   text-align: left;
   transition: transform 0.3s ease;
@@ -141,7 +141,8 @@
 
 /* Styles for filter-sidebar component */
 .filter-sidebar {
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.4); /* Updated to translucent */
+  backdrop-filter: blur(2px); /* Added blur effect */
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
@@ -149,7 +150,7 @@
 
 .filter-sidebar h3 {
   font-size: 1.5rem;
-  color: #2e7d32; /* Excluded filters heading */
+  color: white; /* Excluded filters heading */
   margin-bottom: 1rem;
 }
 
@@ -160,7 +161,7 @@
 .filter-group label {
   display: block;
   font-size: 1rem;
-  color: #333;
+  color: #232323;
   margin-bottom: 0.5rem;
 }
 
@@ -170,8 +171,10 @@
   font-size: 1rem;
   border: 0.0625rem solid #ccc;
   border-radius: 0.25rem;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8); /* Updated to translucent */
+  backdrop-filter: blur(2px); /* Added blur effect */
   transition: border-color 0.3s ease;
+  color: rgb(115, 115, 115);
 }
 
 .filter-group select:focus {
