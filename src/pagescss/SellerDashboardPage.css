@@ -1,7 +1,6 @@
-
 /* <<<<<< seller stats styles >>>>>> */
 .seller-summary .seller-greeting {
-  color: #2e7d32;
+  color: white; /* Changed to white */
   text-align: center;
   font-size: xx-large;
 }
@@ -16,7 +15,7 @@
 .seller-stats h2 {
   text-align: center;
   margin: 0 0 1.4rem 0;
-  color: #2e7d32;
+  color: white; /* Changed to white */
 }
 
 .stats-container {
@@ -58,7 +57,7 @@
 .add-product-form h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: #2e7d32;
+  color: white; /* Changed to white */
 }
 
 .form-group {
@@ -114,7 +113,7 @@
 .product-management-panel h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: #2e7d32;
+  color: white; /* Changed to white */
 }
 
 .product-table {
@@ -179,7 +178,7 @@
 .order-history h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: #2e7d32;
+  color: white; /* Changed to white */
 }
 
 .order-table {

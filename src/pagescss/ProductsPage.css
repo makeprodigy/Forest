@@ -13,7 +13,7 @@
 
 .products-page-title {
   font-size: 2.5rem;
-  color: #2e7d32;
+  color: white; /* Changed to white */
   text-align: center;
   margin: 2rem 0 1rem 0;
 }
@@ -149,7 +149,7 @@
 
 .filter-sidebar h3 {
   font-size: 1.5rem;
-  color: #2e7d32;
+  color: #2e7d32; /* Excluded filters heading */
   margin-bottom: 1rem;
 }
 
