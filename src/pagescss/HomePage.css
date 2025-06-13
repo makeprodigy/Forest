@@ -51,8 +51,9 @@ html {
 
 .hero_content h1 {
   font-size: 3rem;
-  background: linear-gradient(to right, #0e8111, #2e7d32); /* Applied navbar gradient */
+  background: var(--primary-color); /* Updated to use variable */
   -webkit-background-clip: text; /* Ensures gradient applies to text */
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   background-color: rgba(255, 255, 255, 0)
@@ -60,14 +61,14 @@ html {
 
 .hero_content p {
   font-size: 1.2rem;
-  color: white;
+  color: var(--primary); /* Updated to use variable */
   margin-bottom: 2rem;
   background-color: rgba(255, 255, 255, 0)
 }
 
 .hero_content button {
-  background: linear-gradient(to right, #4caf50, #2e7d32); /* Updated to navbar gradient */
-  color: white;
+  background: var(--primary-color); /* Updated to use variable */
+  color: var(--primary); /* Updated to use variable */
   padding: 0.75rem 2rem;
   font-size: 1rem;
   border: none;
@@ -77,7 +78,7 @@ html {
 }
 
 .hero_content button:hover {
-  background: linear-gradient(to right, #2e7d32, #4caf50); /* Adjusted hover gradient */
+  background: var(--primary-color); /* Updated to use variable */
 }
 
 /* <<<<<<<<FEATURED LISTINGS SECTION>>>>>>>> */
@@ -120,13 +121,13 @@ html {
   width: 240px;
   max-width: 240px;
   padding: 1rem;
-  background: linear-gradient(to bottom, #ffffff 60%, var(--primary-green-dark) 100%); /* Updated gradient */
+  background: linear-gradient(to bottom, #ffffff 60%, var(--primary-green-dark) 100%);
   border-radius: 8px;
   text-align: left;
   scroll-snap-align: start;
   transition: transform 0.3s ease;
   border: none;
-  box-shadow: 0 8px 16px var(--box-shadow); /* Adjusted to use variable */
+  box-shadow: 0 8px 16px var(--box-shadow); /* Updated to use variable */
   position: relative;
   z-index: 1;
   transform-origin: center;
@@ -141,14 +142,14 @@ html {
 .product-card h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.2rem 0;
-  color: var(--dark-gray); /* Adjusted to use variable */
+  color: var(--dark-gray); /* Updated to use variable */
   min-height: 3rem;
 }
 
 .product-rating {
   font-size: 1rem;
   color: #777;
-  background-color: var(--white-transparent-07);
+  background-color: var(--white-transparent-07); /* Updated to use variable */
   padding: 0.2rem 0.2rem;
   border-radius: 0.25rem;
   z-index: 2;
@@ -171,7 +172,7 @@ html {
 
 .product-price {
   font-size: 1.1rem;
-  color: greenyellow; 
+  color: greenyellow; /* Retained specific color */
   font-weight: bold;
 }
 
@@ -213,7 +214,7 @@ html {
   flex: 0 0 auto;
   min-width: 320px;
   max-width: 320px;
-  background: linear-gradient(to bottom right, #ffffff 30%, var(--primary-green-dark)100%); /* Updated gradient */
+  background: linear-gradient(to bottom right, #ffffff 30%, var(--primary-green-dark) 100%);
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
@@ -239,20 +240,20 @@ html {
 .testimonial_card h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.2rem;
-  color: var(--dark-gray); /* Retained heading color */
+  color: var(--dark-gray); /* Updated to use variable */
   text-align: center; /* Center the name */
 }
 
 .testimonial_card .role {
   font-size: 1rem;
-  color: #777; /* Retained text color */
+  color: var(--medium-gray); /* Updated to use variable */
   margin-bottom: 1rem;
   text-align: center; /* Center the designation */
 }
 
 .testimonial_card .feedback {
   font-size: 1rem;
-  color: var(--medium-gray); /* Retained text color */
+  color: var(--medium-gray); /* Updated to use variable */
   line-height: 1.5;
   text-align: center; /* Center the feedback text */
 }

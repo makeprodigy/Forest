@@ -13,6 +13,7 @@ import SellerDashboardPage from './pages/SellerDashboardPage';
 import UserProfilePage from './pages/UserProfilePage';
 
 import "./App.css";
+import { CartProvider } from "./CartContext";
 
 const AppContent = () => {
   const location = useLocation()
@@ -63,9 +64,11 @@ const AppContent = () => {
 }
 
 const App = () => (
-  <Router>
-    <AppContent />
-  </Router>
+  <CartProvider>
+    <Router>
+      <AppContent />
+    </Router>
+  </CartProvider>
 );
 
 export default App;

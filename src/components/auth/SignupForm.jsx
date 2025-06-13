@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-
 const SignupForm = ({ setIsLoggedIn }) => {
   const navigate = useNavigate()
 
@@ -13,8 +12,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
   };
 
   return (
-    <div className='signup_form_container'>
-      <div className='signup_form_elements'>
+    <div className="signup_form_container">
+      <div className="signup_form_elements">
         <label>Name:</label>
         <input
           type='text'
@@ -23,8 +22,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
           required
         />
       </div>
-      <div className='signup_form_elements'>
-      <label>Email:</label>
+      <div className="signup_form_elements">
+        <label>Email:</label>
         <input
           type='email'
           name='email'

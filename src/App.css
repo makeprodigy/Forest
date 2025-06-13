@@ -1,8 +1,96 @@
 :root {
-  --bg-color: white;
-  --primary-color: linear-gradient(to bottom,#093028, #06b63e);
-  --secondary-color: #f50057;    
-  --text-color: #333; 
+  --bg-color: white; /* Not used yet */
+  --primary-color: linear-gradient(to bottom, #093028, #06b63e); 
+  /* Used in:
+     - .navbar (App.css)
+     - .navbar_title (App.css)
+     - .navbar_buttons (App.css)
+     - .hero_content h1 (HomePage.css)
+     - .hero_content button (HomePage.css)
+     - .products-page-card-button (ProductsPage.css)
+  */
+
+  --secondary-color: #f50057; /* Not used yet */
+  --text-color: #333; /* Not used yet */
+  --primary: white; 
+  /* Used in:
+     - .navbar_title a (App.css)
+     - .hero_content p (HomePage.css)
+     - .hero_content button (HomePage.css)
+     - .products-page-title (ProductsPage.css)
+     - .submit-button (SellerDashboardPage.css)
+     - .edit-button (SellerDashboardPage.css)
+     - .delete-button (SellerDashboardPage.css)
+  */
+
+  --primary-green-dark: #1b5e20; 
+  /* Used in:
+     - .product-card (HomePage.css)
+     - .testimonial_card (HomePage.css)
+     - .products-page-card (ProductsPage.css)
+  */
+
+  --light-gray: #f5f5f5; 
+  /* Used in:
+     - .featured-listings (HomePage.css)
+     - .testimonials_section (HomePage.css)
+  */
+
+  --medium-gray: #555; 
+  /* Used in:
+     - .stat-item h3 (SellerDashboardPage.css)
+     - .testimonial_card .role (HomePage.css)
+     - .testimonial_card .feedback (HomePage.css)
+  */
+
+  --dark-gray: #333; 
+  /* Used in:
+     - .stat-item p (SellerDashboardPage.css)
+     - .product-card h3 (HomePage.css)
+     - .testimonial_card h3 (HomePage.css)
+  */
+
+  --white-transparent-05: rgba(255, 255, 255, 0.10); /* Not used yet */
+  --white-transparent-07: rgba(255, 255, 255, 0.7); 
+  /* Used in:
+     - .product-rating (HomePage.css)
+  */
+
+  --box-shadow: rgba(0, 0, 0, 0.1); 
+  /* Used in:
+     - .product-card (HomePage.css)
+  */
+
+  --success-color: #2e7d32; 
+  /* Used in:
+     - .products-page-card-price (ProductsPage.css)
+     - .submit-button (SellerDashboardPage.css)
+     - .edit-button (SellerDashboardPage.css)
+     - .status.delivered (SellerDashboardPage.css)
+  */
+
+  --error-color: #d32f2f; 
+  /* Used in:
+     - .delete-button (SellerDashboardPage.css)
+     - .status.pending (SellerDashboardPage.css)
+  */
+
+  --warning-color: #ffa000; 
+  /* Used in:
+     - .status.shipped (SellerDashboardPage.css)
+  */
+
+  --hover-success-color: #256628; 
+  /* Used in:
+     - .products-page-card-button:hover (ProductsPage.css)
+     - .submit-button:hover (SellerDashboardPage.css)
+     - .edit-button:hover (SellerDashboardPage.css)
+  */
+
+  --hover-error-color: #b71c1c; 
+  /* Used in:
+     - .delete-button:hover (SellerDashboardPage.css)
+  */
 }
 
 .main_container {

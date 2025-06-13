@@ -1,6 +1,6 @@
 /* <<<<<< seller stats styles >>>>>> */
 .seller-summary .seller-greeting {
-  color: white; /* Changed to white */
+  color: var(--primary); /* Updated to use variable */
   text-align: center;
   font-size: xx-large;
 }
@@ -15,7 +15,7 @@
 .seller-stats h2 {
   text-align: center;
   margin: 0 0 1.4rem 0;
-  color: white; /* Changed to white */
+  color: var(--primary); /* Updated to use variable */
 }
 
 .stats-container {
@@ -36,13 +36,13 @@
 
 .stat-item h3 {
   margin-bottom: 1.4rem;
-  color: #717171;
+  color: var(--medium-gray); /* Updated to use variable */
 }
 
 .stat-item p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #000;
+  color: var(--dark-gray); /* Updated to use variable */
 }
 
 /* <<<<<< Add product form styles >>>>> */
@@ -57,7 +57,7 @@
 .add-product-form h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: white; /* Changed to white */
+  color: var(--primary); /* Updated to use variable */
 }
 
 .form-group {
@@ -88,8 +88,8 @@
   display: block;
   width: 100%;
   padding: 0.8rem;
-  background-color: #2e7d32;
-  color: #fff;
+  background-color: var(--success-color); /* Updated to use variable */
+  color: var(--primary); /* Updated to use variable */
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -97,7 +97,7 @@
 }
 
 .submit-button:hover {
-  background-color: #256628;
+  background-color: var(--hover-success-color); /* Updated to use variable */
 }
 
 /* <<<<<< Product management Panel styles >>>>> */
@@ -113,7 +113,7 @@
 .product-management-panel h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: white; /* Changed to white */
+  color: var(--primary); /* Updated to use variable */
 }
 
 .product-table {
@@ -148,22 +148,22 @@
 }
 
 .edit-button {
-  background-color: #2e7d32;
-  color: #fff;
+  background-color: var(--success-color); /* Updated to use variable */
+  color: var(--primary); /* Updated to use variable */
   margin-right: 0.5rem;
 }
 
 .edit-button:hover {
-  background-color: #256628;
+  background-color: var(--hover-success-color); /* Updated to use variable */
 }
 
 .delete-button {
-  background-color: #d32f2f;
-  color: #fff;
+  background-color: var(--error-color); /* Updated to use variable */
+  color: var(--primary); /* Updated to use variable */
 }
 
 .delete-button:hover {
-  background-color: #b71c1c;
+  background-color: var(--hover-error-color); /* Updated to use variable */
 }
 
 /* <<<<<< Order history styles >>>>> */
@@ -178,7 +178,7 @@
 .order-history h2 {
   text-align: center;
   margin-bottom: 1.4rem;
-  color: white; /* Changed to white */
+  color: var(--primary); /* Updated to use variable */
 }
 
 .order-table {
@@ -209,13 +209,13 @@
 }
 
 .status.delivered {
-  color: #2e7d32;
+  color: var(--success-color); /* Updated to use variable */
 }
 
 .status.pending {
-  color: #d32f2f;
+  color: var(--error-color); /* Updated to use variable */
 }
 
 .status.shipped {
-  color: #ffa000;
+  color: var(--warning-color); /* Updated to use variable */
 }
