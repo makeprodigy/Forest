@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext';
+import '../../pagescss/CartCheckoutPage.css'; // Import the CSS file
 
 const PaymentForm = () => {
   const { cart, clearCart } = useCart();

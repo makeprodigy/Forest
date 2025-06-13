@@ -100,10 +100,10 @@
 
 .navbar {
   display: flex;
-  background: var(--primary-color);
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 4rem;
+  margin: 1rem;
 }
 .navbar_title {
   display: flex;
@@ -124,26 +124,39 @@
 .navbar_buttons {
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 60%;
   justify-content: space-around;
-  background-color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.3);
   height: 3.5rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  padding:0.5rem;
+  z-index: 1;
 }
 .navbar_buttons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-color);
   text-decoration: none;
   width: 19%;
   color: white;
   height: 100%;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border-radius: 2rem;
+  z-index: 2;
 }
 .navbar_buttons a:hover {
-  border-bottom: 0.4rem solid white;
-  transform: scale(1.05);
+  border-bottom: 0.3rem solid none;
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: var(--primary-green-dark);
+}
+.navbar_buttons a.active {
+  background-color: rgba(255, 255, 255, 0.8); 
+  color: var(--primary-green-dark);
+  border-bottom: 0.3rem solid none;
+  transform: scale(1.02);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 /* <<<<<< Footer Styles >>>>> */

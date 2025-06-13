@@ -1,33 +1,34 @@
 import React from 'react';
 import { useCart } from '../../CartContext';
+import '../../pagescss/CartCheckoutPage.css';
 
 const CartItems = () => {
   const { cart, removeFromCart, increment, decrement } = useCart();
 
   if (cart.length === 0) {
-    return <div className="text-center text-gray-500">Your cart is empty.</div>;
+    return <div className="cart-empty">Your cart is empty.</div>;
   }
 
   return (
-    <div className="space-y-4">
+    <div className="cart-items">
       {cart.map(item => (
-        <div key={item.id} className="flex items-center justify-between bg-white rounded-lg shadow p-4">
-          <div className="flex items-center gap-4">
-            <img src={item.image} alt={item.title} className="w-16 h-16 object-contain rounded" />
+        <div key={item.id} className="cart-item">
+          <div className="cart-item-details">
+            <img src={item.image} alt={item.title} className="cart-item-image" />
             <div>
-              <div className="font-semibold">{item.title}</div>
-              <div className="text-sm text-gray-600">${item.price} x {item.quantity}</div>
-              <div className="flex items-center gap-2 mt-1">
+              <div className="cart-item-title">{item.title}</div>
+              <div className="cart-item-price">${item.price} x {item.quantity}</div>
+              <div className="cart-item-quantity">
                 <button
-                  className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300"
+                  className="quantity-button decrement"
                   onClick={() => decrement(item.id)}
                   aria-label="Decrement"
                 >
                   -
                 </button>
-                <span className="px-2">{item.quantity}</span>
+                <span className="quantity-value">{item.quantity}</span>
                 <button
-                  className="bg-gray-200 px-2 py-1 rounded hover:bg-gray-300"
+                  className="quantity-button increment"
                   onClick={() => increment(item.id)}
                   aria-label="Increment"
                 >
@@ -37,7 +38,7 @@ const CartItems = () => {
             </div>
           </div>
           <button
-            className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700"
+            className="remove-button"
             onClick={() => removeFromCart(item.id)}
           >
             Remove

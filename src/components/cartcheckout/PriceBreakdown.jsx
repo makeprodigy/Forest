@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCart } from '../../CartContext';
+import '../../pagescss/CartCheckoutPage.css'; // Import the CSS file
 
 const PriceBreakdown = () => {
   const { cart } = useCart();
@@ -8,8 +9,8 @@ const PriceBreakdown = () => {
   if (cart.length === 0) return null;
 
   return (
-    <div className="bg-white rounded-lg shadow p-4 mt-4">
-      <div className="flex justify-between font-bold text-lg">
+    <div className="price-breakdown">
+      <div className="price-total">
         <span>Total</span>
         <span>${total.toFixed(2)}</span>
       </div>
