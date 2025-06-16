@@ -166,6 +166,23 @@
   transform: scale(1.02);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
+.navbar_buttons a.active span {
+  background: linear-gradient(159deg, rgba(0,84,180,1) 0%, rgba(64,224,208,1) 70%, #0a223a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.navbar_buttons a:hover span {
+  background: linear-gradient(159deg, rgba(0,84,180,1) 0%, rgba(64,224,208,1) 70%, #0a223a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.01em;
+}
 
 /* <<<<<< Footer Styles >>>>> */
 

@@ -79,7 +79,7 @@ html {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s cubic-bezier(0.4,0,0.2,1);
 }
 .hero_btn.primary {
   background: linear-gradient(to right, #00C9FF 0%, #92FE9D 100%);
@@ -88,8 +88,10 @@ html {
   border: none;
   box-shadow: 0 2px 12px rgba(67,233,123,0.10);
 }
-.hero_btn.primary:hover {
+.hero_btn.primary:hover, .hero_btn.primary:focus {
   background: linear-gradient(90deg, #1976d2 0%, #43e97b 100%);
+  transform: scale(1.06);
+  z-index: 2;
 }
 .hero_btn.secondary {
   background: #fff;
@@ -97,10 +99,12 @@ html {
   color: #06b63e;
   border: 2px solid #43e97b;
 }
-.hero_btn.secondary:hover {
-  background: #e8f5e9;
-  color: #1976d2;
-  border-color: #1976d2;
+.hero_btn.secondary:hover, .hero_btn.secondary:focus {
+  background: #fafafa;
+  color: #00e77b;
+  border-color: #01d06f;
+  transform: scale(1.06);
+  z-index: 2;
 }
 
 /* <<<<<<<<FEATURED LISTINGS SECTION>>>>>>>> */
@@ -341,12 +345,14 @@ h1, h2, h3 {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(25, 118, 210, 0.08), 0 1.5px 6px rgba(0,0,0,0.04);
   border: 2px solid transparent;
-  transition: box-shadow 0.2s, border 0.2s;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.18s cubic-bezier(0.4,0,0.2,1);
 }
 .product-card.clickable:hover, .product-card.clickable:focus {
   border: 2px solid #1976d2;
   box-shadow: 0 12px 32px rgba(25, 118, 210, 0.13), 0 2px 8px rgba(0,0,0,0.07);
   outline: none;
+  transform: scale(1.06);
+  z-index: 2;
 }
 .featured-listings-footer {
   display: flex;
@@ -363,10 +369,12 @@ h1, h2, h3 {
   cursor: pointer;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.18s cubic-bezier(0.4,0,0.2,1);
 }
-.view-all-products-btn:hover {
+.view-all-products-btn:hover, .view-all-products-btn:focus {
   background: linear-gradient(to right, #06b63e, #093028);
+  transform: scale(1.06);
+  z-index: 2;
 }
 
 .testimonial_card.enhanced {

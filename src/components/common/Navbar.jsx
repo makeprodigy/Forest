@@ -14,31 +14,31 @@ const Navbar = () => {
           to='/' 
           className={location.pathname === '/' ? 'active' : ''}
         >
-          Home
+          <span>Home</span>
         </Link>
         <Link 
           to='/seller-dashboard' 
           className={location.pathname === '/seller-dashboard' ? 'active' : ''}
         >
-          Sell
+          <span>Sell</span>
         </Link>
         <Link 
           to='/products' 
           className={location.pathname === '/products' ? 'active' : ''}
         >
-          Products
+          <span>Products</span>
         </Link>
         <Link 
           to='/cart-checkout' 
           className={location.pathname === '/cart-checkout' ? 'active' : ''}
         >
-          Checkout
+          <span>Checkout</span>
         </Link>
         <Link 
           to='/user-profile' 
           className={location.pathname === '/user-profile' ? 'active' : ''}
         >
-          Profile
+          <span>Profile</span>
         </Link>
       </div>
     </header>
