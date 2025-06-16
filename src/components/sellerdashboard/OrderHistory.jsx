@@ -29,36 +29,21 @@ const OrderHistory = () => {
   return (
     <div className="order-history">
       <h2>Order History</h2>
-      <table className="order-table">
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Product Name</th>
-            <th>Buyer Name</th>
-            <th>Quantity</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {orders.length > 0 ? (
-            orders.map((order) => (
-              <tr key={order.id}>
-                <td>{order.id}</td>
-                <td>{order.productName}</td>
-                <td>{order.buyerName}</td>
-                <td>{order.quantity}</td>
-                <td className={`status ${order.status.toLowerCase()}`}>
-                  {order.status}
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="5">No orders found.</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <div className="seller-order-cards">
+        {orders.length > 0 ? (
+          orders.map((order) => (
+            <div className="seller-order-card" key={order.id}>
+              <div className="seller-order-card-row"><span className="order-label">Order ID:</span> {order.id}</div>
+              <div className="seller-order-card-row"><span className="order-label">Product:</span> {order.productName}</div>
+              <div className="seller-order-card-row"><span className="order-label">Buyer:</span> {order.buyerName}</div>
+              <div className="seller-order-card-row"><span className="order-label">Quantity:</span> {order.quantity}</div>
+              <div className={`seller-order-card-row status-badge ${order.status.toLowerCase()}`}>Status: {order.status}</div>
+            </div>
+          ))
+        ) : (
+          <div className="seller-order-card-empty">No orders found.</div>
+        )}
+      </div>
     </div>
   );
 };

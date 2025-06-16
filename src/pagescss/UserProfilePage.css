@@ -97,3 +97,54 @@
     font-size: 1.5rem;
   }
 }
+
+/* User Settings Form Styles */
+.user-settings-form {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.user-settings-form h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-green-dark);
+}
+.user-settings-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+  gap: 0.3rem;
+}
+.user-settings-form input {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #f5f5f5;
+}
+.user-settings-form button {
+  background: var(--primary-color);
+  color: var(--primary);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.user-settings-form button:hover {
+  background: var(--hover-success-color);
+}
+.settings-message {
+  color: var(--success-color);
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+}

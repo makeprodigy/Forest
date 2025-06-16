@@ -7,7 +7,7 @@ html {
 .login_signup_page {
   margin: 0;
   padding: 0;
-  background: var(--bg-color);
+  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,17 +15,24 @@ html {
 }
 
 .login_signup_page_main_container {
-  padding: 2.5rem;
+  padding: 2.5rem 2rem;
   width: 100%;
   max-width: 420px;
-  border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(56, 142, 60, 0.13);
   text-align: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login_signup_page_main_container h1 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
 }
 .signup_form_container, .login_form_container{
   display: flex;
@@ -36,23 +43,30 @@ html {
 .signup_form_elements, .login_form_elements {
   display: flex;
   align-items: center;
-  margin: 1.3rem 0;
+  margin: 1.1rem 0 0.7rem 0;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 .signup_form_elements label, .login_form_elements label {
-  font-size: 1.1rem;
-  width: 25%;
+  font-size: 1.08rem;
+  width: 28%;
   text-align: right;
+  color: #1976d2;
+  font-weight: 500;
 }
 .signup_form_elements input, .login_form_elements input  {
-  background-color: rgb(238, 238, 238);
+  background-color: #f5f5f5;
   flex: 1;
-  width: 75%;
-  padding: 0.4rem;
-  font-size: 1rem;
-  border-radius: 0.3rem;
-  border: 1px solid rgb(238, 238, 238);
+  width: 72%;
+  padding: 0.55rem 0.8rem;
+  font-size: 1.05rem;
+  border-radius: 0.4rem;
+  border: 1.5px solid #e0e0e0;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.signup_form_elements input:focus, .login_form_elements input:focus {
+  border: 1.5px solid #43e97b;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.13);
+  outline: none;
 }
 .signup_form_elements input::placeholder,
 .login_form_elements input::placeholder {
@@ -60,17 +74,34 @@ html {
   color: #9a9999;
 }
 .signup_button, .login_button {
-  background-color: rgb(64, 64, 255);
-  color: white;
-  font-size: 1.1rem;
-  border-radius: 0.3rem;
-  height: 2rem;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  font-size: 1.13rem;
+  border-radius: 0.5rem;
+  height: 2.4rem;
   width: 100%;
-  margin: 1.3rem 0;
+  margin: 1.3rem 0 0.5rem 0;
   border: none;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.13);
+  letter-spacing: 0.01em;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.signup_button:hover, .login_button:hover {
+  background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+  box-shadow: 0 4px 18px rgba(67, 233, 123, 0.18);
 }
 .switch_button {
   border: none;
-  color: blue;
-  font-size: 1.05rem;
+  color: #2e7d32;
+  font-size: 1.08rem;
+  font-weight: 600;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 0.2rem;
+  transition: color 0.2s;
+}
+.switch_button:hover {
+  color: #11998e;
 }

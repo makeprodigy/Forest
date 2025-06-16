@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const testimonials = [
   {
@@ -28,21 +28,37 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [active, setActive] = useState(0);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 800;
+  const visible = isMobile ? [testimonials[active]] : testimonials;
+
   return (
     <div className="testimonials_section">
       <h2>What Our Users Say</h2>
       <div className="testimonials_container">
-        {testimonials.map((t, index) => (
-          <div className="testimonial_card" key={index}>
+        {visible.map((t, index) => (
+          <div className="testimonial_card enhanced" key={index}>
             <img src={t.image} alt={t.name} />
             <h3>{t.name}</h3>
             <p className="role">{t.role}</p>
-            <p className="feedback">"{t.feedback}"</p>
+            <p className="feedback"><span className="quote-mark">"</span>{t.feedback}<span className="quote-mark">"</span></p>
           </div>
         ))}
       </div>
+      {isMobile && (
+        <div className="testimonial-dots">
+          {testimonials.map((_, idx) => (
+            <span
+              key={idx}
+              className={`testimonial-dot${active === idx ? ' active' : ''}`}
+              onClick={() => setActive(idx)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default Testimonials;
+

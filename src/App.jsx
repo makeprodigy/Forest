@@ -11,6 +11,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage';
 import ProductsPage from './pages/ProductsPage';
 import SellerDashboardPage from './pages/SellerDashboardPage';
 import UserProfilePage from './pages/UserProfilePage';
+import PaymentGateway from './components/cartcheckout/PaymentGateway';
 
 import "./App.css";
 import { CartProvider } from "./CartContext";
@@ -53,10 +54,11 @@ const AppContent = () => {
         />
         <Route element={<HomePage/>} path="/" />
         <Route element={<ProductsPage/>} path="/products" />
-        <Route element={<ProductDetailsPage/>} path="/product-details" />
+        <Route element={<ProductDetailsPage/>} path="/product-details/:id" />
         <Route element={<UserProfilePage/>} path="/user-profile" />
         <Route element={<SellerDashboardPage/>} path="/seller-dashboard" />
         <Route element={<CartCheckoutPage/>} path="/cart-checkout" />
+        <Route element={<PaymentGateway/>} path="/payment" />
       </Routes>
       {location.pathname !== "/auth" && <Footer />}
     </div>

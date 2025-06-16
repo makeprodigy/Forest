@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedListings = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=6')
@@ -24,7 +26,15 @@ const FeaturedListings = () => {
       <h2 className="main-heading">Featured Listings</h2>
       <div className="product-grid">
         {products.map(product => (
-          <div key={product.id} className="product-card">
+          <div
+            key={product.id}
+            className="product-card clickable"
+            onClick={() => navigate(`/product-details/${product.id}`)}
+            tabIndex={0}
+            role="button"
+            aria-label={`View details for ${product.title}`}
+            onKeyDown={e => { if (e.key === 'Enter') navigate(`/product-details/${product.id}`); }}
+          >
             <img src={product.image} alt={product.title} />
             <h3>{product.title}</h3>
             <p className="product-rating">⭐ {product.rating?.rate} ({product.rating?.count})</p>
@@ -33,6 +43,11 @@ const FeaturedListings = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="featured-listings-footer">
+        <button className="view-all-products-btn" onClick={() => navigate('/products')}>
+          View All Products
+        </button>
       </div>
     </div>
   );

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useCart } from '../../CartContext';
 import '../../pagescss/CartCheckoutPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const CartItems = () => {
   const { cart, removeFromCart, increment, decrement } = useCart();
+  const navigate = useNavigate();
 
   if (cart.length === 0) {
     return <div className="cart-empty">Your cart is empty.</div>;
@@ -14,11 +16,22 @@ const CartItems = () => {
       {cart.map(item => (
         <div key={item.id} className="cart-item">
           <div className="cart-item-details">
-            <img src={item.image} alt={item.title} className="cart-item-image" />
+            <img
+              src={item.image}
+              alt={item.title}
+              className="cart-item-image cart-item-clickable"
+              onClick={() => navigate(`/product-details/${item.id}`)}
+              style={{ cursor: 'pointer' }}
+            />
             <div>
-              <div className="cart-item-title">{item.title}</div>
-              <div className="cart-item-price">${item.price} x {item.quantity}</div>
-              <div className="cart-item-quantity">
+              <div
+                className="cart-item-title cart-item-clickable"
+                onClick={() => navigate(`/product-details/${item.id}`)}
+                style={{ cursor: 'pointer' }}
+              >
+                {item.title}
+              </div>
+              <div className="cart-item-quantity-row">
                 <button
                   className="quantity-button decrement"
                   onClick={() => decrement(item.id)}
@@ -34,15 +47,21 @@ const CartItems = () => {
                 >
                   +
                 </button>
+                <span style={{ display: 'inline-block', width: '1.2rem' }} />
+                <button
+                  className="delete-icon-btn"
+                  onClick={() => removeFromCart(item.id)}
+                  aria-label="Delete"
+                >
+                  🗑️
+                </button>
               </div>
             </div>
           </div>
-          <button
-            className="remove-button"
-            onClick={() => removeFromCart(item.id)}
-          >
-            Remove
-          </button>
+          <div className="cart-item-price-summary">
+            <div className="cart-item-price">${item.price}</div>
+            <div className="cart-item-qty">Qty: {item.quantity}</div>
+          </div>
         </div>
       ))}
     </div>

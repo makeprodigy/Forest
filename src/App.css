@@ -102,14 +102,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 4rem;
-  margin: 1rem;
+  height: 2.7rem;
+  margin: 0.5rem 0.5rem 0rem 0.5rem;
 }
 .navbar_title {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.1rem;
   width: 30%;
   height: 100%;
   background-color: var(--primary-color);
@@ -120,6 +120,14 @@
 .navbar_title a {
   text-decoration: none;
   color: white;
+  background: linear-gradient(159deg, rgba(0,84,180,1) 0%, rgba(64,224,208,1) 70%, #0a223a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  transition: background 0.3s;
 }
 .navbar_buttons {
   display: flex;
@@ -127,10 +135,10 @@
   width: 60%;
   justify-content: space-around;
   background-color: rgba(255, 255, 255, 0.3);
-  height: 3.5rem;
-  font-size: 1.1rem;
-  border-radius: 2rem;
-  padding:0.5rem;
+  height: 2.2rem;
+  font-size: 1.05rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.3rem;
   z-index: 1;
 }
 .navbar_buttons a {
@@ -142,7 +150,7 @@
   color: white;
   height: 100%;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  border-radius: 2rem;
+  border-radius: 0.4rem;
   z-index: 2;
 }
 .navbar_buttons a:hover {
