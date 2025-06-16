@@ -54,3 +54,4 @@ const FeaturedListings = () => {
 };
 
 export default FeaturedListings;
+

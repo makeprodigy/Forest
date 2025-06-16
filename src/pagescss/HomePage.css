@@ -147,17 +147,18 @@ html {
   width: 240px;
   max-width: 240px;
   padding: 1rem;
-  background: linear-gradient(to bottom, #ffffff 60%, var(--primary-green-dark) 100%);
+  background: linear-gradient(135deg, #ffffff 60%, #f5fafd 100%);
   border-radius: 8px;
   text-align: left;
   scroll-snap-align: start;
   transition: transform 0.3s ease;
   border: none;
-  box-shadow: 0 8px 16px var(--box-shadow); /* Updated to use variable */
+  box-shadow: 0 8px 16px var(--box-shadow);
   position: relative;
   z-index: 1;
   transform-origin: center;
   transition: transform 0.3s ease, z-index 0.3s ease;
+  color: #222;
 }
 
 .product-card:hover {
@@ -168,8 +169,7 @@ html {
 .product-card h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0 0.2rem 0;
-  color: var(--dark-gray); /* Updated to use variable */
-  min-height: 3rem;
+  color: var(--dark-gray);
 }
 
 .product-rating {
@@ -198,7 +198,7 @@ html {
 
 .product-price {
   font-size: 1.1rem;
-  color: greenyellow; /* Retained specific color */
+  color: #2e7d32;
   font-weight: bold;
 }
 
@@ -360,11 +360,11 @@ h1, h2, h3 {
   margin-top: 1.5rem;
 }
 .view-all-products-btn {
-  background: linear-gradient(to right, #093028, #06b63e);
+  background: linear-gradient(159deg, rgba(0,84,180,1) 0%, rgba(64,224,208,1) 70%, #0a223a 100%);
   color: #fff;
   font-size: 1.1rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   padding: 0.8rem 2.2rem;
   cursor: pointer;
   font-weight: 600;
@@ -372,7 +372,8 @@ h1, h2, h3 {
   transition: background 0.2s, transform 0.18s cubic-bezier(0.4,0,0.2,1);
 }
 .view-all-products-btn:hover, .view-all-products-btn:focus {
-  background: linear-gradient(to right, #06b63e, #093028);
+  background: linear-gradient(159deg, #0a223a 0%, rgba(0,84,180,1) 70%, rgba(64,224,208,1) 100%);
+  color: #00e77b;
   transform: scale(1.06);
   z-index: 2;
 }
