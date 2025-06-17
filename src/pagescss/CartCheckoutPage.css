@@ -482,3 +482,23 @@
   z-index: 1;
   height: 100%;
 }
+
+.cart-checkout-root {
+  max-width: 75rem;
+}
+.cart-checkout-summary {
+  max-width: 21.875rem;
+}
+.cart-checkout-item {
+  min-width: 21.25rem;
+}
+.cart-checkout-img {
+  width: 4rem;
+  height: 4rem;
+}
+.cart-checkout-btn {
+  min-width: 5rem;
+}
+.cart-checkout-total {
+  max-width: 25rem;
+}

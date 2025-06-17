@@ -1,6 +1,8 @@
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
+
 * , *:before, *::after {
   box-sizing: inherit;
 }
@@ -23,6 +25,37 @@ body {
 @keyframes pageFade {
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 13.5px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
   }
 }
 

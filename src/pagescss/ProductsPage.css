@@ -205,8 +205,8 @@
 
 .products-search-bar {
   flex: 1 1 350px;
-  max-width: 480px;
-  min-width: 180px;
+  max-width: 30rem;
+  min-width: 11.25rem;
   padding: 0.85rem 1.4rem;
   font-size: 1.13rem;
   border: 1.5px solid #bdbdbd;
@@ -232,6 +232,7 @@
   margin-right: 0.2rem;
   transition: border-color 0.2s;
   outline: none;
+  min-width: 7.5rem;
 }
 .products-filter-dropdown:focus {
   border-color: var(--primary-green-dark, #388e3c);
