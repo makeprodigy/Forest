@@ -147,7 +147,7 @@
   justify-content: center;
   text-decoration: none;
   width: 19%;
-  color: white;
+  color: #00bfae;
   height: 100%;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   border-radius: 0.4rem;
@@ -155,7 +155,7 @@
 }
 .navbar_buttons a:hover {
   border-bottom: 0.3rem solid none;
-  transform: scale(1.03);
+  transform: scale(1.02);
   background-color: rgba(255, 255, 255, 0.6);
   color: var(--primary-green-dark);
 }
@@ -172,7 +172,7 @@
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.01em;
 }
 .navbar_buttons a:hover span {
