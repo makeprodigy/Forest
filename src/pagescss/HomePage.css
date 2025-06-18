@@ -22,11 +22,11 @@ html {
   justify-content: center;
   align-items: center;
   padding: 3rem 2rem 5rem 2rem;
-  min-height: 70vh;
+  min-height: 75vh;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(159deg, rgba(0,84,180,1) 0%, rgba(64,224,208,1) 70%);
+  background: linear-gradient(159deg, rgb(0, 84, 180) 0%, rgba(64,224,208,1) 70%);
   margin: 0.7rem 0rem 0rem 0rem;
 }
 
