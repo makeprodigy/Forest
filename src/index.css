@@ -1,61 +1,226 @@
-html {
-  box-sizing: border-box;
-  font-size: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  *, *:before, *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    @apply bg-page-gradient text-neutral-800 antialiased;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Modern scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full hover:bg-neutral-400 transition-colors;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-500;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white;
+  }
+
+  /* Button focus styles */
+  button:focus-visible {
+    @apply ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* Input focus styles */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply ring-2 ring-primary-500 ring-offset-1;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  /* Responsive font sizes */
+  @media (max-width: 1200px) {
+    html {
+      font-size: 15.5px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    html {
+      font-size: 14.5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    html {
+      font-size: 13.5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
+  }
 }
 
-* , *:before, *::after {
-  box-sizing: inherit;
-}
-* {
-  /* outline: 1px solid rgba(18, 4, 222, 0.8); */
-}
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(315deg, #f5f5f5 0%, #b4fee5 74%);
-}
-body {
-  opacity: 0;
-  animation: pageFade 1s ease forwards;
-}
-@keyframes pageFade {
-  to {
-    opacity: 1;
+@layer components {
+  /* Modern button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-button-gradient text-white shadow-soft hover:shadow-medium hover:scale-105 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary-600 border-2 border-primary-200 shadow-soft hover:bg-primary-50 hover:border-primary-300 hover:scale-105 focus:ring-primary-500;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 focus:ring-neutral-500;
+  }
+
+  /* Modern card styles */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-neutral-100 overflow-hidden transition-all duration-300 hover:shadow-medium hover:scale-[1.02];
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-custom rounded-2xl shadow-soft border border-white/20;
+  }
+
+  /* Modern input styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-neutral-200 bg-white text-neutral-900 placeholder-neutral-500 transition-all duration-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none;
+  }
+
+  .input-error {
+    @apply border-error-500 focus:border-error-500 focus:ring-error-500/20;
+  }
+
+  /* Modern form styles */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-neutral-700;
+  }
+
+  /* Modern navigation styles */
+  .nav-link {
+    @apply relative px-4 py-2 text-neutral-600 font-medium transition-all duration-200 hover:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20 rounded-lg;
+  }
+
+  .nav-link.active {
+    @apply text-primary-600 bg-primary-50;
+  }
+
+  /* Modern badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-700;
+  }
+
+  .badge-error {
+    @apply bg-error-100 text-error-700;
+  }
+
+  .badge-warning {
+    @apply bg-warning-100 text-warning-700;
+  }
+
+  /* Modern loading states */
+  .loading-skeleton {
+    @apply animate-pulse bg-neutral-200 rounded;
+  }
+
+  /* Modern glassmorphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-custom border border-white/20;
+  }
+
+  /* Modern gradient text */
+  .gradient-text {
+    @apply bg-text-gradient bg-clip-text text-transparent;
   }
 }
 
-@media (max-width: 1200px) {
-  html {
-    font-size: 15.5px;
+@layer utilities {
+  /* Custom utilities */
+  .text-balance {
+    text-wrap: balance;
   }
-}
-@media (max-width: 1024px) {
-  html {
-    font-size: 15px;
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-}
-@media (max-width: 900px) {
-  html {
-    font-size: 14.5px;
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
-}
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
+
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
-}
-@media (max-width: 600px) {
-  html {
-    font-size: 13.5px;
-  }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s infinite;
   }
 }
 

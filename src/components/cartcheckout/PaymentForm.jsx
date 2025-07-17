@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useCart } from '../../CartContext';
-import '../../pagescss/CartCheckoutPage.css'; // Import the CSS file
 
 const PaymentForm = () => {
   const { cart, clearCart } = useCart();
@@ -20,20 +19,37 @@ const PaymentForm = () => {
   };
 
   if (success) {
-    return <div className="payment-success">Payment successful! Thank you for your purchase.</div>;
+    return <div className="text-success text-xl text-center mt-8 font-semibold">Payment successful! Thank you for your purchase.</div>;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="payment-form">
+    <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg shadow-black/10 px-6 py-8 max-w-sm mx-auto flex flex-col gap-5">
       <div>
-        <label>Name on Card</label>
-        <input name="name" value={form.name} onChange={handleChange} required />
+        <label className="font-medium text-gray-800 mb-1">Name on Card</label>
+        <input 
+          className="w-full px-3 py-2 border border-gray-400 rounded-md text-base mb-3 bg-gray-100 transition-colors duration-200 focus:border-2 focus:border-success focus:outline-none"
+          name="name" 
+          value={form.name} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
       <div>
-        <label>Card Number</label>
-        <input name="card" value={form.card} onChange={handleChange} required />
+        <label className="font-medium text-gray-800 mb-1">Card Number</label>
+        <input 
+          className="w-full px-3 py-2 border border-gray-400 rounded-md text-base mb-3 bg-gray-100 transition-colors duration-200 focus:border-2 focus:border-success focus:outline-none"
+          name="card" 
+          value={form.card} 
+          onChange={handleChange} 
+          required 
+        />
       </div>
-      <button type="submit">Pay Now</button>
+      <button 
+        className="bg-success text-white border-none rounded-md px-5 py-3 text-lg font-semibold cursor-pointer transition-colors duration-200 hover:bg-green-800"
+        type="submit"
+      >
+        Pay Now
+      </button>
     </form>
   );
 };

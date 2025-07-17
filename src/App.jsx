@@ -13,7 +13,6 @@ import SellerDashboardPage from './pages/SellerDashboardPage';
 import UserProfilePage from './pages/UserProfilePage';
 import PaymentGateway from './components/cartcheckout/PaymentGateway';
 
-import "./App.css";
 import { CartProvider } from "./CartContext";
 
 const AppContent = () => {
@@ -25,11 +24,11 @@ const AppContent = () => {
 
   useEffect(() => {
     const onHomePage = location.pathname === "/"
-    const delay = onHomePage ? 1000 : 400
+    const delay = onHomePage ? 1500 : 600
 
     const loadingTimer = setTimeout(() => {
       setPageLoading(false)
-    },delay)
+    }, delay)
 
     return () => clearTimeout(loadingTimer)
   }, [location.pathname])
@@ -43,23 +42,25 @@ const AppContent = () => {
   }
 
   return (
-    <div 
-     className='main_container'
-    >
+    <div className="min-h-screen flex flex-col bg-page-gradient">
       {location.pathname !== "/auth" && <Navbar isLoggedIn={isLoggedIn}/>}
-      <Routes>
-        <Route
-          path="/auth"
-          element={<LoginSignupPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
-        />
-        <Route element={<HomePage/>} path="/" />
-        <Route element={<ProductsPage/>} path="/products" />
-        <Route element={<ProductDetailsPage/>} path="/product-details/:id" />
-        <Route element={<UserProfilePage/>} path="/user-profile" />
-        <Route element={<SellerDashboardPage/>} path="/seller-dashboard" />
-        <Route element={<CartCheckoutPage/>} path="/cart-checkout" />
-        <Route element={<PaymentGateway/>} path="/payment" />
-      </Routes>
+      
+      <main className="flex-1">
+        <Routes>
+          <Route
+            path="/auth"
+            element={<LoginSignupPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route element={<HomePage/>} path="/" />
+          <Route element={<ProductsPage/>} path="/products" />
+          <Route element={<ProductDetailsPage/>} path="/product-details/:id" />
+          <Route element={<UserProfilePage/>} path="/user-profile" />
+          <Route element={<SellerDashboardPage/>} path="/seller-dashboard" />
+          <Route element={<CartCheckoutPage/>} path="/cart-checkout" />
+          <Route element={<PaymentGateway/>} path="/payment" />
+        </Routes>
+      </main>
+      
       {location.pathname !== "/auth" && <Footer />}
     </div>
   )
