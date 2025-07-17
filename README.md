@@ -1,42 +1,42 @@
-# 🌲 Forest - Modern Marketplace
+# Forest - Modern Marketplace
 
 A beautiful, modern e-commerce marketplace built with React and Tailwind CSS. Forest provides a seamless shopping experience with an intuitive interface for both buyers and sellers.
 
-## ✨ Features
+## Features
 
-### 🎨 Modern UI Design
+### Modern UI Design
 - **Contemporary Design System**: Built with a comprehensive design system using modern color palettes, typography, and spacing
 - **Glassmorphism Effects**: Subtle glass-like effects for depth and visual appeal
 - **Smooth Animations**: Micro-interactions and smooth transitions throughout the app
 - **Responsive Design**: Fully responsive across all devices and screen sizes
 - **Accessibility**: WCAG compliant with proper focus states and keyboard navigation
 
-### 🛍️ Shopping Experience
+### Shopping Experience
 - **Product Browsing**: Beautiful product cards with hover effects and quick add functionality
 - **Product Details**: Rich product pages with image galleries and detailed information
 - **Shopping Cart**: Seamless cart management with real-time updates
 - **Checkout Process**: Streamlined checkout with multiple payment options
 
-### 💼 Seller Features
+### Seller Features
 - **Seller Dashboard**: Comprehensive dashboard for managing products and orders
 - **Product Management**: Easy product listing and inventory management
 - **Order Tracking**: Real-time order status and customer communication
 
-### 🔐 User Management
+### User Management
 - **Authentication**: Modern login/signup forms with social login options
 - **User Profiles**: Personalized user profiles with order history
 - **Settings Management**: User preferences and account settings
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 with modern hooks and functional components
 - **Styling**: Tailwind CSS with custom design system
 - **Routing**: React Router v6 for seamless navigation
 - **State Management**: React Context API for global state
 - **Animations**: CSS animations and Framer Motion-inspired transitions
-- **Icons**: Custom SVG icons and emoji for visual appeal
+- **Icons**: Custom SVG icons for visual appeal
 
-## 🎨 Design System
+## Design System
 
 ### Color Palette
 - **Primary**: Modern green gradient (#667eea to #764ba2)
@@ -56,14 +56,14 @@ A beautiful, modern e-commerce marketplace built with React and Tailwind CSS. Fo
 - **Navigation**: Sticky navigation with mobile menu
 - **Loading States**: Beautiful loading animations and skeletons
 
-## 📱 Responsive Design
+## Responsive Design
 
 The application is fully responsive with breakpoints for:
 - **Mobile**: 320px - 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: 1024px+
 
-## 🎯 Key Improvements
+## Key Improvements
 
 ### Modern UI Enhancements
 1. **Updated Color Scheme**: Replaced old green theme with modern gradient palette
@@ -86,7 +86,7 @@ The application is fully responsive with breakpoints for:
 4. **Performance**: Optimized animations and transitions
 5. **Mobile First**: Responsive design with mobile-optimized interactions
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 16+ 
@@ -116,7 +116,7 @@ npm run build
 npm run preview
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -138,7 +138,7 @@ src/
 └── index.css           # Global styles
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 Update colors in `tailwind.config.js`:
@@ -170,7 +170,7 @@ keyframes: {
 }
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -178,11 +178,11 @@ keyframes: {
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Inter Font](https://rsms.me/inter/) for the beautiful typography
@@ -191,4 +191,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ for the Forest community
+Made with love for the Forest community
