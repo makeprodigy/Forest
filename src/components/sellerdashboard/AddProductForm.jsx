@@ -32,7 +32,7 @@ const XIcon = () => (
   </svg>
 );
 
-const AddProductForm = () => {
+const AddProductForm = ({ onBackToProducts }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     productName: '',
@@ -393,16 +393,33 @@ const AddProductForm = () => {
       {/* Form Content */}
       <div className="bg-white rounded-2xl p-4 lg:p-8 shadow-soft border border-neutral-100">
         <div className="mb-4 lg:mb-6">
-          <h2 className="text-xl lg:text-2xl font-bold text-neutral-800 mb-2 flex items-center space-x-2">
-            {steps[currentStep - 1].icon}
-            <span>{steps[currentStep - 1].title}</span>
-          </h2>
-          <p className="text-sm lg:text-base text-neutral-600">
-            {currentStep === 1 && 'Enter basic product information to get started'}
-            {currentStep === 2 && 'Set pricing and inventory details for your product'}
-            {currentStep === 3 && 'Upload product images and add detailed specifications'}
-            {currentStep === 4 && 'Configure shipping and return policy information'}
-          </p>
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-xl lg:text-2xl font-bold text-neutral-800 mb-2 flex items-center space-x-2">
+                {steps[currentStep - 1].icon}
+                <span>{steps[currentStep - 1].title}</span>
+              </h2>
+              <p className="text-sm lg:text-base text-neutral-600">
+                {currentStep === 1 && 'Enter basic product information to get started'}
+                {currentStep === 2 && 'Set pricing and inventory details for your product'}
+                {currentStep === 3 && 'Upload product images and add detailed specifications'}
+                {currentStep === 4 && 'Configure shipping and return policy information'}
+              </p>
+            </div>
+            {onBackToProducts && (
+              <button
+                type="button"
+                onClick={onBackToProducts}
+                className="flex items-center space-x-2 px-4 py-2 text-neutral-600 hover:text-neutral-800 hover:bg-neutral-100 rounded-xl transition-colors duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span className="hidden sm:inline">Back to Products</span>
+                <span className="sm:hidden">Back</span>
+              </button>
+            )}
+          </div>
         </div>
 
         <form onSubmit={handleSubmit}>

@@ -221,6 +221,21 @@
   transform: rotate(180deg);
 }
 
+/* Shopping bag specific styles to prevent rotation */
+.shopping-bag-container {
+  transform: none !important;
+}
+
+.shopping-bag-icon {
+  transform: none !important;
+  animation: none !important;
+}
+
+.shopping-bag-container * {
+  transform: none !important;
+  animation: none !important;
+}
+
 /* Badge styles */
 .badge-modern {
   background: linear-gradient(135deg, #388e3c 0%, #4caf50 100%);

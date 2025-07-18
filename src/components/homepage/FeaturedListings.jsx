@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const FeaturedListings = () => {
   const [products, setProducts] = useState([]);
@@ -18,6 +19,63 @@ const FeaturedListings = () => {
         setLoading(false);
       });
   }, []);
+
+  // Animation variants for container
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  // Animation variants for individual product cards
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    },
+    hover: {
+      y: -4,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Animation variants for images
+  const imageVariants = {
+    hover: {
+      y: -2,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Animation variants for buttons
+  const buttonVariants = {
+    hover: {
+      y: -1,
+      transition: {
+        duration: 0.2,
+        ease: "easeOut"
+      }
+    }
+  };
 
   if (loading) {
     return (
@@ -45,7 +103,12 @@ const FeaturedListings = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        <motion.div 
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-blue-100 text-blue-800 mb-4 sm:mb-6">
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
@@ -54,22 +117,30 @@ const FeaturedListings = () => {
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">Trending Products</h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">Discover our handpicked selection of the most popular items</p>
-        </div>
+        </motion.div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {products.map(product => (
-            <div
+            <motion.div
               key={product.id}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-2"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden cursor-pointer"
+              variants={cardVariants}
+              whileHover="hover"
               onClick={() => navigate(`/product-details/${product.id}`)}
             >
               {/* Product Image */}
               <div className="relative overflow-hidden bg-gray-50 p-4 sm:p-6">
-                <img 
+                <motion.img 
                   src={product.image} 
                   alt={product.title} 
-                  className="w-full h-32 sm:h-40 lg:h-48 object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-32 sm:h-40 lg:h-48 object-contain"
+                  variants={imageVariants}
                 />
                 {/* Rating Badge */}
                 <div className="absolute top-2 right-2 sm:top-4 sm:right-4 flex items-center bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1 rounded-full shadow-sm">
@@ -102,22 +173,39 @@ const FeaturedListings = () => {
                     </svg>
                     <span className="text-lg sm:text-2xl font-bold text-gray-900">${product.price}</span>
                   </div>
-                  <button className="p-1.5 sm:p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 group-hover:scale-110">
+                  <motion.button 
+                    className="p-1.5 sm:p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                  >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Button */}
-        <div className="text-center">
-          <button 
-            className="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+        >
+          <motion.button 
+            className="group inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-lg hover:shadow-xl"
             onClick={() => navigate('/products')}
+            whileHover={{ 
+              y: -2,
+              transition: { duration: 0.2, ease: "easeOut" }
+            }}
+            whileTap={{ 
+              y: 0,
+              transition: { duration: 0.1 }
+            }}
           >
             <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -126,8 +214,8 @@ const FeaturedListings = () => {
             <svg className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

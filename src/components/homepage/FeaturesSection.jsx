@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const FeaturesSection = () => {
   const features = [
@@ -40,36 +41,110 @@ const FeaturesSection = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-blue-100 text-blue-800 mb-4 sm:mb-6">
+        <motion.div 
+          className="text-center mb-12 sm:mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div 
+            className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-blue-100 text-blue-800 mb-4 sm:mb-6"
+            variants={itemVariants}
+          >
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
             </svg>
             <span className="text-xs sm:text-sm font-medium">Why Choose Us</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">Built for Modern Commerce</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">Experience the future of online marketplace with cutting-edge features designed for both buyers and sellers</p>
-        </div>
+          </motion.div>
+          <motion.h2 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4"
+            variants={itemVariants}
+          >
+            Built for Modern Commerce
+          </motion.h2>
+          <motion.p 
+            className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4"
+            variants={itemVariants}
+          >
+            Experience the future of online marketplace with cutting-edge features designed for both buyers and sellers
+          </motion.p>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {features.map((feature, index) => (
-            <div 
+            <motion.div 
               key={index}
               className="group text-center p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+              variants={cardVariants}
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.2 }
+              }}
             >
               {/* Icon */}
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <div className="p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+              <motion.div 
+                className="flex items-center justify-center mb-4 sm:mb-6"
+                whileHover={{ rotate: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <motion.div 
+                  className="p-3 sm:p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <div className="text-white">
                     {feature.icon}
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Content */}
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors duration-300">
@@ -78,39 +153,46 @@ const FeaturesSection = () => {
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Stats Bar */}
-        <div className="mt-12 sm:mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
-            <div className="group">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">
-                99.9%
-              </div>
-              <div className="text-blue-100 text-sm sm:text-base">Uptime</div>
-            </div>
-            <div className="group">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">
-                &lt; 2s
-              </div>
-              <div className="text-blue-100 text-sm sm:text-base">Load Time</div>
-            </div>
-            <div className="group">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">
-                256-bit
-              </div>
-              <div className="text-blue-100 text-sm sm:text-base">Encryption</div>
-            </div>
-            <div className="group">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">
-                24/7
-              </div>
-              <div className="text-blue-100 text-sm sm:text-base">Support</div>
-            </div>
-          </div>
-        </div>
+        <motion.div 
+          className="mt-12 sm:mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.div 
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { value: "99.9%", label: "Uptime" },
+              { value: "< 2s", label: "Load Time" },
+              { value: "256-bit", label: "Encryption" },
+              { value: "24/7", label: "Support" }
+            ].map((stat, index) => (
+              <motion.div 
+                key={index}
+                className="group"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 group-hover:text-blue-200 transition-colors duration-300">
+                  {stat.value}
+                </div>
+                <div className="text-blue-100 text-sm sm:text-base">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

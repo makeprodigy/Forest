@@ -49,7 +49,7 @@ const ChevronDownIcon = () => (
   </svg>
 );
 
-const ProductManagementPanel = () => {
+const ProductManagementPanel = ({ onAddProduct }) => {
   const [products, setProducts] = useState([
     { 
       id: 1, 
@@ -232,7 +232,10 @@ const ProductManagementPanel = () => {
             <span>Filters</span>
             <ChevronDownIcon className={`transform transition-transform duration-200 ${filtersOpen ? 'rotate-180' : ''}`} />
           </button>
-          <button className="bg-primary-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl font-medium hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+          <button 
+            onClick={onAddProduct}
+            className="bg-primary-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-xl font-medium hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+          >
             <PlusIcon />
             <span className="hidden sm:inline">Add New Product</span>
             <span className="sm:hidden">Add</span>
