@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+  outline: solid 1px red !important;
+} */
+
 @layer base {
   html {
     box-sizing: border-box;

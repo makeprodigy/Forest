@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
-import { User, LogOut, LogIn, Settings, Package, CreditCard } from 'lucide-react';
+import { User, LogIn, Settings, Package } from 'lucide-react';
 import ProfileInfo from '../components/userprofile/ProfileInfo';
 import UserOrderHistory from '../components/userprofile/UserOrderHistory';
 import UserSettings from '../components/userprofile/UserSettings';
 import { useNavigate } from 'react-router-dom';
 
-const UserProfilePage = () => {
+const UserProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   const [activeTab, setActiveTab] = useState('profile');
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.setItem('isLoggedIn', 'false');
-    navigate('/auth');
-  };
 
   const handleLogin = () => {
     navigate('/auth');
@@ -94,19 +88,8 @@ const UserProfilePage = () => {
         </div>
 
         {/* Content Area */}
-        <div className="bg-white rounded-3xl shadow-xl shadow-black/5 p-8 mb-8">
+        <div className="bg-white rounded-3xl shadow-xl shadow-black/5 p-8">
           {renderContent()}
-        </div>
-
-        {/* Logout Button */}
-        <div className="text-center">
-          <button 
-            onClick={handleLogout} 
-            className="bg-gradient-to-r from-red-500 to-pink-600 text-white border-none rounded-xl px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 hover:scale-105 flex items-center gap-3 mx-auto"
-          >
-            <LogOut className="w-5 h-5" />
-            Logout
-          </button>
         </div>
       </div>
     </div>

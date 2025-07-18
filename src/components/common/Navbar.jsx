@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   Home, 
   Package, 
@@ -8,12 +8,18 @@ import {
   User,
   TreePine,
   Menu,
-  X
+  X,
+  LogIn
 } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleLogin = () => {
+    navigate('/auth');
+  };
 
   // Enhanced Lucide Icons with better styling
   const HomeIcon = ({ className = "w-5 h-5", isActive = false }) => (
@@ -61,6 +67,15 @@ const Navbar = () => {
     </div>
   );
 
+  const LoginIcon = ({ className = "w-5 h-5", isActive = false }) => (
+    <div className={`relative ${className}`}>
+      <LogIn className="w-full h-full" />
+      {isActive && (
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-600 rounded-full opacity-20 animate-pulse"></div>
+      )}
+    </div>
+  );
+
   const TreeIcon = ({ className = "w-6 h-6" }) => (
     <div className={`relative ${className}`}>
       <TreePine className="w-full h-full" />
@@ -68,13 +83,23 @@ const Navbar = () => {
     </div>
   );
 
-  const navItems = [
-    { path: '/', label: 'Home', icon: HomeIcon, color: 'green' },
-    { path: '/products', label: 'Products', icon: ProductsIcon, color: 'blue' },
-    { path: '/seller-dashboard', label: 'Sell', icon: SellIcon, color: 'purple' },
-    { path: '/cart-checkout', label: 'Cart', icon: CartIcon, color: 'orange' },
-    { path: '/user-profile', label: 'Profile', icon: ProfileIcon, color: 'indigo' },
-  ];
+  // Dynamic navigation items based on login status
+  const getNavItems = () => {
+    const baseItems = [
+      { path: '/', label: 'Home', icon: HomeIcon, color: 'green' },
+      { path: '/products', label: 'Products', icon: ProductsIcon, color: 'blue' },
+      { path: '/seller-dashboard', label: 'Sell', icon: SellIcon, color: 'purple' },
+      { path: '/cart-checkout', label: 'Cart', icon: CartIcon, color: 'orange' },
+    ];
+
+    if (isLoggedIn) {
+      return [...baseItems, { path: '/user-profile', label: 'Profile', icon: ProfileIcon, color: 'indigo' }];
+    } else {
+      return [...baseItems, { path: '/auth', label: 'SignUp/in', icon: LoginIcon, color: 'emerald' }];
+    }
+  };
+
+  const navItems = getNavItems();
 
   const getColorClasses = (color, isActive, isHover = false) => {
     const colorMap = {
@@ -102,6 +127,11 @@ const Navbar = () => {
         active: 'text-indigo-600 bg-indigo-50 border-indigo-200',
         hover: 'hover:text-indigo-600 hover:bg-indigo-50/50 hover:border-indigo-200',
         icon: 'text-indigo-600'
+      },
+      emerald: {
+        active: 'text-emerald-600 bg-emerald-50 border-emerald-200',
+        hover: 'hover:text-emerald-600 hover:bg-emerald-50/50 hover:border-emerald-200',
+        icon: 'text-emerald-600'
       }
     };
     

@@ -37,13 +37,9 @@ const AppContent = () => {
     return <LoadingScreen />
   }
 
-  if (!isLoggedIn && location.pathname === "/") {
-    return <Navigate to="/auth" replace />;
-  }
-
   return (
     <div className="min-h-screen flex flex-col bg-page-gradient">
-      {location.pathname !== "/auth" && <Navbar isLoggedIn={isLoggedIn}/>}
+      {location.pathname !== "/auth" && <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}
       
       <main className="flex-1">
         <Routes>
@@ -54,7 +50,7 @@ const AppContent = () => {
           <Route element={<HomePage/>} path="/" />
           <Route element={<ProductsPage/>} path="/products" />
           <Route element={<ProductDetailsPage/>} path="/product-details/:id" />
-          <Route element={<UserProfilePage/>} path="/user-profile" />
+          <Route element={<UserProfilePage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} path="/user-profile" />
           <Route element={<SellerDashboardPage/>} path="/seller-dashboard" />
           <Route element={<CartCheckoutPage/>} path="/cart-checkout" />
           <Route element={<PaymentGateway/>} path="/payment" />
