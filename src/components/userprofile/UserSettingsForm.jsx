@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { User, Mail, Lock, Eye, EyeOff, Save, Bell, Shield, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { logout } from '../auth/AuthAPI';
+import { useNavigate } from 'react-router-dom';
 
 const UserSettingsForm = () => {
   const [form, setForm] = useState({
@@ -20,6 +22,7 @@ const UserSettingsForm = () => {
   });
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -46,6 +49,11 @@ const UserSettingsForm = () => {
       setIsLoading(false);
       setTimeout(() => setMessage(''), 3000);
     }, 1000);
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/auth');
   };
 
   // Animation variants
@@ -320,6 +328,16 @@ const UserSettingsForm = () => {
                 Save Changes
               </>
             )}
+          </motion.button>
+          {/* Logout Button */}
+          <motion.button
+            type="button"
+            onClick={handleLogout}
+            className="mt-6 bg-gradient-to-r from-red-500 to-pink-600 text-white border-none rounded-xl px-8 py-4 text-lg font-semibold cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25 hover:scale-105 flex items-center gap-3 mx-auto"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Logout
           </motion.button>
           <AnimatePresence>
             {message && (

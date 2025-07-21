@@ -9,7 +9,9 @@ export const signup = async (userInfo) => {
 };
 
 export const logout = () => {
-  // Implement logout logic
+  // Clear authentication/session data
+  localStorage.removeItem('isLoggedIn');
+  // Add more clearing logic if needed (e.g., tokens)
 };
 
 export const getCurrentUser = () => {
