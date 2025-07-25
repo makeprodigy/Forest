@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../../CartContext';
+import { useCart } from './CartContext';
 import { useNavigate } from 'react-router-dom';
 import { Minus, Plus, Trash2, ExternalLink, Package } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';

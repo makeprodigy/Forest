@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../../CartContext';
+import { useCart } from './CartContext';
 
 const PaymentForm = () => {
   const { cart, clearCart } = useCart();

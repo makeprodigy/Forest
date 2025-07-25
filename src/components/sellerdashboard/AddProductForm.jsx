@@ -422,7 +422,12 @@ const AddProductForm = ({ onBackToProducts }) => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && currentStep < steps.length) {
+                  e.preventDefault();
+                }
+              }}>
           {renderStepContent()}
 
           {/* Navigation Buttons */}

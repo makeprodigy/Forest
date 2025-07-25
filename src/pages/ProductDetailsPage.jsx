@@ -5,7 +5,7 @@ import ProductGallery from '../components/productdetails/ProductGallery';
 import ProductDescription from '../components/productdetails/ProductDescription';
 import RatingsAndReviews from '../components/productdetails/RatingsAndReviews';
 import SellerInfo from '../components/productdetails/SellerInfo';
-import { useCart } from '../CartContext';
+import { useCart } from '../components/cartcheckout/CartContext';
 
 const mockProduct = {
   id: 0,

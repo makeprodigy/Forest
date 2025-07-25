@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '../../CartContext';
+import { useCart } from './CartContext';
 import { Receipt, Tag, Truck, Shield } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

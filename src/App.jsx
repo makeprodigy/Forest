@@ -13,7 +13,7 @@ import SellerDashboardPage from './pages/SellerDashboardPage';
 import UserProfilePage from './pages/UserProfilePage';
 import PaymentGateway from './components/cartcheckout/PaymentGateway';
 
-import { CartProvider } from "./CartContext";
+import { CartProvider } from "./components/cartcheckout/CartContext";
 
 const AppContent = () => {
   const location = useLocation()

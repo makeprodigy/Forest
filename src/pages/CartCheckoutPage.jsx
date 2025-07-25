@@ -2,7 +2,7 @@ import React from 'react';
 import CartItems from '../components/cartcheckout/CartItems';
 import PriceBreakdown from '../components/cartcheckout/PriceBreakdown';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../CartContext';
+import { useCart } from '../components/cartcheckout/CartContext';
 import { ShoppingCart, ArrowRight, CreditCard } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
